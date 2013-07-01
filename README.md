@@ -57,3 +57,25 @@ requests to the Nexmo API.
     }
     sms = NexmoMessage(params)
     response = sms.send_request()
+
+
+## Handling callbacks
+
+Nexmo can call one of your urls to send further details about a text message processing.
+
+`django-nexmo` provides a very basic callback handler that does nothing but logging
+Nexmo calls.
+
+In your main `urls.py` file:
+
+    urlpatterns = patterns('',
+        …
+        url(r'^nexmo/', include('nexmo.urls')),
+        …
+    )
+
+This will declare a callback view accessible through the
+http://your-site.url/nexmo/callback/ url.
+
+Copy this url and paste it in the "Callback URL" section of your "API settings"
+section of your Nexmo.com account.
