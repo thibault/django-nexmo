@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 setup(
     name = 'django-nexmo',
     version = '1.0.0',
-    packages = ['django-nexmo'],
+    packages = ['nexmo'],
     include_package_data = True,
     license = 'WTFPL',
     description = 'A simple Django app to send text messages using the Nexmo api.',
@@ -18,7 +18,7 @@ setup(
     author = 'Thibault Jouannic',
     author_email = 'thibault@miximum.fr',
     setup_requires=('setuptools'),
-    requires = (,),
+    requires = (),
     classifiers = [
         'Environment :: Web Environment',
         'Framework :: Django',
