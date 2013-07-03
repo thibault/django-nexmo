@@ -48,8 +48,8 @@ requests to the Nexmo API.
 
 
     params = {
-        'username': settings.NEXMO_USERNAME,
-        'password': settings.NEXMO_PASSWORD,
+        'api_key': settings.NEXMO_USERNAME,
+        'api_secret': settings.NEXMO_PASSWORD,
         'type': 'unicode',
         'from': settings.NEXMO_FROM,
         'to': to,

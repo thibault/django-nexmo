@@ -11,8 +11,8 @@ def send_message(to, message):
     >>> send_message('+33612345678', 'My sms message body')
     """
     params = {
-        'username': settings.NEXMO_USERNAME,
-        'password': settings.NEXMO_PASSWORD,
+        'api_key': settings.NEXMO_USERNAME,
+        'api_secret': settings.NEXMO_PASSWORD,
         'type': 'unicode',
         'from': settings.NEXMO_FROM,
         'to': to,
