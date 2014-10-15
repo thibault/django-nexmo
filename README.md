@@ -20,13 +20,15 @@ Add the `nexmo` app to your installed applications:
 
 You need to add a few lines in your `settings.py` file for django-nexmo to work:
 
-    NEXMO_USERNAME = 'username'
-    NEXMO_PASSWORD = 'password'
+    NEXMO_USERNAME = 'API_KEY'
+    NEXMO_PASSWORD = 'SECRET'
     NEXMO_FROM = 'Name or phone'
+
 
 Did I mention that you need a [Nexmo account](https://www.nexmo.com/)?
 Seems quite obvious to me.
 
+You can get your API_KEY and SECRET from your [Nexmo Dashboard](https://dashboard.nexmo.com/private/dashboard)
 
 ## Basic usage
 
