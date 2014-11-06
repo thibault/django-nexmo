@@ -88,6 +88,17 @@ http://your-site.url/nexmo/callback/ url.
 Copy this url and paste it in the "Callback URL" section of your "API settings"
 section of your Nexmo.com account.
 
+Testing
+-------
+
+`django-nexmo` uses [tox for testing in multiple
+environments](https://pypi.python.org/pypi/tox).
+
+To run the tests, create a new virtualenv, then `pip install tox`. To run the
+tests:
+
+    tox
+
 Credits
 -------
 
