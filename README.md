@@ -12,20 +12,24 @@ Installation using pip is simple:
 
 Add the `nexmo` app to your installed applications:
 
-    INSTALLED_APPS = (
-        …
-        'nexmo',
-        …
-    )
+```python
+INSTALLED_APPS = (
+    …
+    'nexmo',
+    …
+)
+```
 
 Configuration
 -------------
 
 You need to add a few lines in your `settings.py` file for django-nexmo to work:
 
-    NEXMO_USERNAME = 'API_KEY'
-    NEXMO_PASSWORD = 'SECRET'
-    NEXMO_FROM = 'Name or phone'
+```python
+NEXMO_USERNAME = 'API_KEY'
+NEXMO_PASSWORD = 'SECRET'
+NEXMO_FROM = 'Name or phone'
+```
 
 
 Did I mention that you need a [Nexmo account](https://www.nexmo.com/)?
@@ -38,8 +42,10 @@ Basic usage
 
 The `nexmo` apps gives you access to a shortcut to send text messages easily.
 
-    from nexmo import send_message
-    send_message('+33612345678', 'My sms message body')
+```python
+from nexmo import send_message
+send_message('+33612345678', 'My sms message body')
+```
 
 Is that all? Yes… for now.
 
@@ -51,19 +57,21 @@ Advanced usage
 Therefore, you can import and use the `NexmoMessage` class to manually forge
 requests to the Nexmo API.
 
-    from nexmo.libpynexmo.nexmomessage import NexmoMessage
+```python
+from nexmo.libpynexmo.nexmomessage import NexmoMessage
 
 
-    params = {
-        'api_key': settings.NEXMO_USERNAME,
-        'api_secret': settings.NEXMO_PASSWORD,
-        'type': 'unicode',
-        'from': settings.NEXMO_FROM,
-        'to': to,
-        'text': message.encode('utf-8'),
-    }
-    sms = NexmoMessage(params)
-    response = sms.send_request()
+params = {
+    'api_key': settings.NEXMO_USERNAME,
+    'api_secret': settings.NEXMO_PASSWORD,
+    'type': 'unicode',
+    'from': settings.NEXMO_FROM,
+    'to': to,
+    'text': message.encode('utf-8'),
+}
+sms = NexmoMessage(params)
+response = sms.send_request()
+```
 
 
 Handling callbacks
@@ -76,11 +84,13 @@ Nexmo calls.
 
 In your main `urls.py` file:
 
-    urlpatterns = patterns('',
-        …
-        url(r'^nexmo/', include('nexmo.urls')),
-        …
-    )
+```python
+urlpatterns = patterns('',
+    …
+    url(r'^nexmo/', include('nexmo.urls')),
+    …
+)
+```
 
 This will declare a callback view accessible through the
 http://your-site.url/nexmo/callback/ url.
