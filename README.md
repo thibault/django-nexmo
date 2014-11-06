@@ -1,8 +1,10 @@
-# django-nexmo
+django-nexmo
+============
 
 `django-nexmo` is a tiny Django app to send sms using the Nexmo provider.
 
-## Installation
+Installation
+------------
 
 Installation using pip is simple:
 
@@ -16,7 +18,8 @@ Add the `nexmo` app to your installed applications:
         …
     )
 
-## Configuration
+Configuration
+-------------
 
 You need to add a few lines in your `settings.py` file for django-nexmo to work:
 
@@ -30,7 +33,8 @@ Seems quite obvious to me.
 
 You can get your API_KEY and SECRET from your [Nexmo Dashboard](https://dashboard.nexmo.com/private/dashboard)
 
-## Basic usage
+Basic usage
+-----------
 
 The `nexmo` apps gives you access to a shortcut to send text messages easily.
 
@@ -40,7 +44,8 @@ The `nexmo` apps gives you access to a shortcut to send text messages easily.
 Is that all? Yes… for now.
 
 
-## Advanced usage
+Advanced usage
+--------------
 
 `django-nexmo` embeds [libpynexmo by Marco Londero](https://github.com/marcuz/libpynexmo).
 Therefore, you can import and use the `NexmoMessage` class to manually forge
@@ -61,7 +66,8 @@ requests to the Nexmo API.
     response = sms.send_request()
 
 
-## Handling callbacks
+Handling callbacks
+------------------
 
 Nexmo can call one of your urls to send further details about a text message processing.
 
@@ -81,3 +87,9 @@ http://your-site.url/nexmo/callback/ url.
 
 Copy this url and paste it in the "Callback URL" section of your "API settings"
 section of your Nexmo.com account.
+
+Credits
+-------
+
+Crafted with love by [Thibault Jouannic](http://www.miximum.fr]. Available for
+[Python / Django Freelancing](http://www.miximum.fr/a-propos/).
