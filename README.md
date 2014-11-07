@@ -28,8 +28,8 @@ Configuration
 You need to add a few lines in your `settings.py` file for django-nexmo to work:
 
 ```python
-NEXMO_USERNAME = 'API_KEY'
-NEXMO_PASSWORD = 'SECRET'
+NEXMO_API_KEY = 'API_KEY'
+NEXMO_API_SECRET = 'SECRET'
 NEXMO_FROM = 'Name or phone'
 ```
 
@@ -47,11 +47,16 @@ The `nexmo` apps gives you access to a shortcut to send text messages easily.
 
 ```python
 from nexmo import send_message
-send_message('+33612345678', 'My sms message body')
+send_message(frm='+33123456789', to='+33612345678', message='My sms message body')
 ```
 
-Is that all? Yes… for now.
+The `frm` parameter can be omited. In that case, the `NEXMO_FROM` configuration
+field will be used instead.
 
+```python
+from nexmo import send_message
+send_message(to='+33612345678', message='My sms message body')
+```
 
 Advanced usage
 --------------
