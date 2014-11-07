@@ -7,7 +7,7 @@ from libnexmo import Nexmo
 from django.conf import settings
 
 
-def send_message(frm=settings.NEXMO_FROM, to=None, text=None):
+def send_message(frm=settings.NEXMO_DEFAULT_FROM, to=None, text=None):
     """Shortcut to send a sms using libnexmo api.
 
     :param frm: The originator of the message

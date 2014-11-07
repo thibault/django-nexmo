@@ -30,7 +30,7 @@ You need to add a few lines in your `settings.py` file for django-nexmo to work:
 ```python
 NEXMO_API_KEY = 'API_KEY'
 NEXMO_API_SECRET = 'SECRET'
-NEXMO_FROM = 'Name or phone'
+NEXMO_DEFAULT_FROM = 'Name or phone'
 ```
 
 
