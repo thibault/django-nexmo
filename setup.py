@@ -11,7 +11,7 @@ setup(
     version='1.0.2',
     packages=['nexmo'],
     include_package_data=True,
-    license='WTFPL',
+    license='MIT',
     description='A simple Django app to send text messages using the Nexmo api.',
     long_description=README,
     url='https://github.com/thibault/django-nexmo',
