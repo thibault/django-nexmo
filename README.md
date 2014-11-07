@@ -37,7 +37,8 @@ NEXMO_FROM = 'Name or phone'
 Did I mention that you need a [Nexmo account](https://www.nexmo.com/)?
 Seems quite obvious to me.
 
-You can get your API_KEY and SECRET from your [Nexmo Dashboard](https://dashboard.nexmo.com/private/dashboard)
+You can get your API_KEY and SECRET from your [Nexmo
+Dashboard](https://dashboard.nexmo.com/private/dashboard)
 
 Basic usage
 -----------
@@ -55,25 +56,10 @@ Is that all? Yes… for now.
 Advanced usage
 --------------
 
-`django-nexmo` embeds [libpynexmo by Marco Londero](https://github.com/marcuz/libpynexmo).
-Therefore, you can import and use the `NexmoMessage` class to manually forge
-requests to the Nexmo API.
+`django-nexmo` uses [libnexmo](https://github.com/thibault/libnexmo).
+Therefore, you can [use the library for a low level access to the Nexmo
+API](http://libnexmo.readthedocs.org/en/latest/).
 
-```python
-from nexmo.libpynexmo.nexmomessage import NexmoMessage
-
-
-params = {
-    'api_key': settings.NEXMO_USERNAME,
-    'api_secret': settings.NEXMO_PASSWORD,
-    'type': 'unicode',
-    'from': settings.NEXMO_FROM,
-    'to': to,
-    'text': message.encode('utf-8'),
-}
-sms = NexmoMessage(params)
-response = sms.send_request()
-```
 
 
 Handling callbacks
@@ -95,7 +81,7 @@ urlpatterns = patterns('',
 ```
 
 This will declare a callback view accessible through the
-http://your-site.url/nexmo/callback/ url.
+`http://your-site.url/nexmo/callback/` url.
 
 Copy this url and paste it in the "Callback URL" section of your "API settings"
 section of your Nexmo.com account.
