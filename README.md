@@ -1,6 +1,9 @@
 django-nexmo
 ============
 
+[![Build
+Status](https://travis-ci.org/thibault/django-nexmo.svg)](https://travis-ci.org/thibault/django-nexmo)
+
 `django-nexmo` is a tiny Django app to send sms [using the Nexmo
 provider](https://www.nexmo.com/). The actual communication with Nexmo's API is
 [delegated to libnexmo](https://github.com/thibault/libnexmo).
