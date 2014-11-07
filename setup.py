@@ -18,7 +18,9 @@ setup(
     author='Thibault Jouannic',
     author_email='thibault@miximum.fr',
     setup_requires=('setuptools'),
-    requires=(),
+    install_requires=[
+        'libnexmo',
+    ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
