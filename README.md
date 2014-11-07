@@ -1,7 +1,9 @@
 django-nexmo
 ============
 
-`django-nexmo` is a tiny Django app to send sms using the Nexmo provider.
+`django-nexmo` is a tiny Django app to send sms [using the Nexmo
+provider](https://www.nexmo.com/). The actual communication with Nexmo's API is
+[delegated to libnexmo](https://github.com/thibault/libnexmo).
 
 Installation
 ------------
