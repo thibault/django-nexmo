@@ -16,3 +16,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 SECRET_KEY = "gloubiboulga secret key"
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+NEXMO_API_KEY = 'API_KEY'
+NEXMO_API_SECRET = 'SECRET'
+NEXMO_DEFAULT_FROM = '+33123456789'
