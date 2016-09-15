@@ -19,7 +19,7 @@ setup(
     author_email='thibault@miximum.fr',
     setup_requires=('setuptools'),
     install_requires=[
-        'libnexmo',
+        'nexmo',
     ],
     classifiers=[
         'Environment :: Web Environment',
@@ -31,7 +31,7 @@ setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
