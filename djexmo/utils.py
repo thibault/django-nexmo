@@ -2,7 +2,7 @@
 
 from __future__ import unicode_literals
 
-from libnexmo import Nexmo
+import nexmo
 
 from django.conf import settings
 
@@ -25,6 +25,10 @@ def send_message(frm=None, to=None, text=None):
     if frm is None:
         frm = settings.NEXMO_DEFAULT_FROM
 
-    nexmo = Nexmo(settings.NEXMO_API_KEY, settings.NEXMO_API_SECRET)
-    response = nexmo.send_sms(frm, to, text)
+    client = nexmo.Client(key=settings.NEXMO_API_KEY, secret=settings.NEXMO_API_SECRET)
+    response = client.send_message({
+        'from': frm,
+        'to': to,
+        'text': text
+    })
     return response

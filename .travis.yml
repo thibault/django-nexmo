@@ -4,8 +4,8 @@ install:
 script:
     - tox
 env:
-    - TOXENV=py34-1.7
-    - TOXENV=py27-1.7
-    - TOXENV=py34-1.6
-    - TOXENV=py27-1.6
+    - TOXENV=py2-1.8
+    - TOXENV=py2-1.10
+    - TOXENV=py3-1.8
+    - TOXENV=py3-1.10
 after_success: coveralls

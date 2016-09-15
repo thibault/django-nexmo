@@ -1,5 +1,5 @@
 INSTALLED_APPS = (
-    'nexmo',
+    'djexmo',
 )
 DATABASES = {
     'default': {

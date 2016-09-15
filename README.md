@@ -6,7 +6,12 @@ Status](https://travis-ci.org/thibault/django-nexmo.svg)](https://travis-ci.org/
 
 `django-nexmo` is a tiny Django app to send sms [using the Nexmo
 provider](https://www.nexmo.com/). The actual communication with Nexmo's API is
-[delegated to libnexmo](https://github.com/thibault/libnexmo).
+[delegated to the nexmo python lib](https://github.com/Nexmo/nexmo-python).
+
+**Warning** between version 1.0 and 2.0, we ditched the obsolete and
+unsupported [libnexmo](https://github.com/thibault/libnexmo) and had to change
+the conflicting package name. If you are migrating from an old `django-nexmo`
+version, you might have to change your imports from `nexmo` to `djexmo`.
 
 Installation
 ------------
@@ -20,7 +25,7 @@ Add the `nexmo` app to your installed applications:
 ```python
 INSTALLED_APPS = (
     …
-    'nexmo',
+    'djexmo',
     …
 )
 ```
@@ -36,7 +41,6 @@ NEXMO_API_SECRET = 'SECRET'
 NEXMO_DEFAULT_FROM = 'Name or phone'
 ```
 
-
 Did I mention that you need a [Nexmo account](https://www.nexmo.com/)?
 Seems quite obvious to me.
 
@@ -46,10 +50,10 @@ Dashboard](https://dashboard.nexmo.com/private/dashboard)
 Basic usage
 -----------
 
-The `nexmo` apps gives you access to a shortcut to send text messages easily.
+The `djexmo` apps gives you access to a shortcut to send text messages easily.
 
 ```python
-from nexmo import send_message
+from djexmo import send_message
 send_message(frm='+33123456789', to='+33612345678', message='My sms message body')
 ```
 
@@ -57,17 +61,16 @@ The `frm` parameter can be omited. In that case, the `NEXMO_FROM` configuration
 field will be used instead.
 
 ```python
-from nexmo import send_message
+from djexmo import send_message
 send_message(to='+33612345678', message='My sms message body')
 ```
 
 Advanced usage
 --------------
 
-`django-nexmo` uses [libnexmo](https://github.com/thibault/libnexmo).
-Therefore, you can [use the library for a low level access to the Nexmo
-API](http://libnexmo.readthedocs.org/en/latest/).
-
+`django-nexmo` uses [the official nexmo lib](https://github.com/Nexmo/nexmo-python).
+Therefore, you can use the library for a low level access to the Nexmo
+API.
 
 
 Handling callbacks
@@ -83,7 +86,7 @@ In your main `urls.py` file:
 ```python
 urlpatterns = patterns('',
     …
-    url(r'^nexmo/', include('nexmo.urls')),
+    url(r'^nexmo/', include('djexmo.urls')),
     …
 )
 ```
