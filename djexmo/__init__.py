@@ -6,4 +6,4 @@ from .utils import send_message
 
 __all__ = ['send_message']
 
-__version__ = '1.0.2'
+__version__ = '2.0.0'
