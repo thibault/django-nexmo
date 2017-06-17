@@ -18,7 +18,7 @@ Installation
 
 Installation using pip is simple:
 
-    $ pip install django-nexmo
+    $ pip install django-nexmo==2.0.0a1
 
 Add the `nexmo` app to your installed applications:
 
@@ -54,7 +54,7 @@ The `djexmo` apps gives you access to a shortcut to send text messages easily.
 
 ```python
 from djexmo import send_message
-send_message(frm='+33123456789', to='+33612345678', message='My sms message body')
+send_message(frm='+33123456789', to='+33612345678', text='My sms message body')
 ```
 
 The `frm` parameter can be omited. In that case, the `NEXMO_FROM` configuration
@@ -62,7 +62,7 @@ field will be used instead.
 
 ```python
 from djexmo import send_message
-send_message(to='+33612345678', message='My sms message body')
+send_message(to='+33612345678', text='My sms message body')
 ```
 
 Advanced usage
